@@ -206,7 +206,10 @@ int jumlahDaun(const Node* root) {
     if (root == NULL){
         return 0;
     }
-    return 1 + jumlahDaun(root->left) + jumlahDaun (root->right);
+    if (root ->left == NULL && root->right == NULL){
+        return 1;
+    }
+    return jumlahDaun(root->left) + jumlahDaun(root->right);
 }
 
 // =============================================================================
